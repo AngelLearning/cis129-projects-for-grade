@@ -1,0 +1,54 @@
+# Angel R Canez
+# Module 3 Lab
+# Interactive Coffee Shop Simulator 
+
+#The number of coffees and muffins bought
+nbrOfCoffees = int(input('Enter the amount of coffees: '))
+nbrOfMuffins = int(input('Enter the amount of muffins: '))
+
+# Prices and Taxes
+PRICECOFFEE = 5
+PRICEMUFFIN = 4
+TAX = .06 
+TAX_PERCENTAGE = int(TAX * 100)
+
+# Subtotal
+coffeeSubtotal = nbrOfCoffees * PRICECOFFEE
+muffinSubtotal = nbrOfMuffins * PRICEMUFFIN
+subTotal = coffeeSubtotal + muffinSubtotal 
+taxOfSubtotal = subTotal * TAX 
+
+# Total
+grandTotal = subTotal + taxOfSubtotal 
+
+print('***************************************')
+print('My Coffee and Muffin Shop')
+print('Number of coffees bought?')
+print(nbrOfCoffees)
+print('Number of muffins bought?')
+print(nbrOfMuffins)
+print('***************************************\n')
+
+print('***************************************')
+print('My Coffee and Muffin Shop Receipt')
+print(nbrOfCoffees, 'Coffee at', f'${PRICECOFFEE}', 'each:', '$', f'{coffeeSubtotal}.00')
+print(nbrOfMuffins, 'Muffins at', f'${PRICEMUFFIN}', 'each:', '$', f'{muffinSubtotal}.00')
+print(f'{TAX_PERCENTAGE}% tax:', '$', f'{taxOfSubtotal:.2f}'.lstrip('0') or ('1'))
+# figuring out how to get rid of the zero out of the "taxOfSubtotal" was so annoying but I did it
+print('---------')
+
+print('Total: $', grandTotal)
+print('***************************************')
+
+
+#      (  )   (   )  )
+#      ) (   )  (  (
+#      ( )  (    ) )
+#      _____________
+#     <_____________> ___
+#     |             |/ _ \
+#     |               | | |
+#     |               |_| |
+#  ___|             |\___/
+# /    \___________/    \
+# \_____________________/ 
