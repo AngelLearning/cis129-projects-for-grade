@@ -5,41 +5,63 @@
 #The number of coffees and muffins bought
 nbrOfCoffees = int(input('Enter the amount of coffees: '))
 nbrOfMuffins = int(input('Enter the amount of muffins: '))
+nbrOfCakePops = int(input('Enter the amount of cake pops: ')) 
+nbrOfCinnamonRolls = int(input('Enter the amount of cinnamon rolls: ')) 
 
 # Prices and Taxes
 PRICECOFFEE = 5
 PRICEMUFFIN = 4
+PRICECAKEPOP = 2 
+PRICECINNAMONROLL = 3 
 TAX = .06 
 TAX_PERCENTAGE = int(TAX * 100)
 
-# Subtotal
+# Subtotals
 coffeeSubtotal = nbrOfCoffees * PRICECOFFEE
 muffinSubtotal = nbrOfMuffins * PRICEMUFFIN
-subTotal = coffeeSubtotal + muffinSubtotal 
+cakepopSubtotal = nbrOfCakePops * PRICECAKEPOP 
+cinnamonSubtotal = nbrOfCinnamonRolls * PRICECINNAMONROLL 
+subTotal = coffeeSubtotal + muffinSubtotal + cakepopSubtotal + cinnamonSubtotal  
 taxOfSubtotal = subTotal * TAX 
 
-# Total
+# GrandTotal Calculation
 grandTotal = subTotal + taxOfSubtotal 
-
+# Receipt Print
 print('***************************************')
 print('My Coffee and Muffin Shop')
-print('Number of coffees bought?')
-print(nbrOfCoffees)
-print('Number of muffins bought?')
-print(nbrOfMuffins)
+if (nbrOfCoffees) >= 1:
+    print('Number of coffees bought?: ') 
+    print(nbrOfCoffees)
+if (nbrOfMuffins) >= 1:
+    print('Number of muffins bought?: ') 
+    print(nbrOfMuffins)
+if (nbrOfCakePops) >= 1:
+    print('Number of cake pops bought?: ') 
+    print(nbrOfCakePops)
+if (nbrOfCinnamonRolls) >= 1:
+    print('Number of cinnamon rolls bought?: ') 
+    print(nbrOfCinnamonRolls)
 print('***************************************\n')
 
 print('***************************************')
 print('My Coffee and Muffin Shop Receipt')
-print(nbrOfCoffees, 'Coffee at', f'${PRICECOFFEE}', 'each:', '$', f'{coffeeSubtotal}.00')
-print(nbrOfMuffins, 'Muffins at', f'${PRICEMUFFIN}', 'each:', '$', f'{muffinSubtotal}.00')
+if (nbrOfCoffees) >= 1:
+    print(nbrOfCoffees, 'Coffee at', f'${PRICECOFFEE}', 'each:', '$', f'{coffeeSubtotal}.00')
+if (nbrOfMuffins) >= 1:
+    print(nbrOfMuffins, 'Muffins at', f'${PRICEMUFFIN}', 'each:', '$', f'{muffinSubtotal}.00')
+if (nbrOfCakePops) >= 1:
+    print(nbrOfCakePops, 'Cake Pops at', f'${PRICECAKEPOP}', 'each:', '$', f'{cakepopSubtotal}.00') 
+if (nbrOfCinnamonRolls) >= 1:
+    print(nbrOfCinnamonRolls, 'Cinnamon Rolls at', f'${PRICECINNAMONROLL}', 'each:', '$', f'{cinnamonSubtotal}.00') 
 print(f'{TAX_PERCENTAGE}% tax:', '$', f'{taxOfSubtotal:.2f}'.lstrip('0') or ('1'))
 # figuring out how to get rid of the zero out of the "taxOfSubtotal" was so annoying but I did it
 print('---------')
 
+# Printed Grandtotal, Thank You, and Rating
 print('Total: $', grandTotal)
 print('***************************************')
-
+print('Thank you for shopping with us') 
+print('  Rate your experience ☆☆☆☆☆') 
 
 #      (  )   (   )  )
 #      ) (   )  (  (
